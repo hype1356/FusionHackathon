@@ -140,6 +140,7 @@ primitives = [("+", numericBinop (+)),
 numericBinop:: (Integer -> Integer -> Integer) -> [LispVal] -> LispVal
 numericBinop op params = Number $ foldl1 op $ map unpackNums params
 
+-- hello 
 
 unpackNums:: LispVal -> Integer
 unpackNums (Number n) = n 
@@ -150,6 +151,7 @@ unpackNums (String n) = let parsed = reads n in
 
 unpackNums (List [n]) = unpackNums n 
 unpackNums _ = 0 
+
 
 
 
